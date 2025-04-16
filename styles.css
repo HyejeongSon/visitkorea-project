@@ -155,7 +155,6 @@ body {
 .inr {
   display: flex;
   background-color: white;
-  border-radius: 0.5rem;
   overflow: hidden;
   color: #333;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -323,4 +322,8 @@ body {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+
+.swiper-slide.dummy-slide {
+  visibility: hidden;
 }

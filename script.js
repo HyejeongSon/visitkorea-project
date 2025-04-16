@@ -124,6 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
+    // 👉 왼쪽 더미 카드 추가
+    const dummySlide = document.createElement("div")
+    dummySlide.className = "swiper-slide dummy-slide"
+    dummySlide.style.visibility = "hidden"
+    festivalSlider.appendChild(dummySlide)
+
     filteredFestivals.forEach((festival, index) => {
       const slide = document.createElement("div")
       slide.className = "swiper-slide"
@@ -165,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function calculateSlideWidth() {
     if (filteredFestivals.length === 0) return
-    const slide = document.querySelector(".swiper-slide")
+    const slide = document.querySelector(".swiper-slide:not(.dummy-slide)")
     if (slide) {
       slideWidth = slide.offsetWidth + slideGap
     }
@@ -178,17 +184,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideCenter = slideWidth / 2
     const containerCenter = containerWidth / 2
 
-    let offset = currentFestivalIndex * slideWidth - containerCenter + slideCenter
+    // 👉 더미 카드 1칸 보정
+    let offset = (currentFestivalIndex + 1) * slideWidth - containerCenter + slideCenter
     offset = Math.max(0, offset)
 
     festivalSlider.style.transform = `translateX(-${offset}px)`
-    updateActiveStates()
   }
 
   function updateActiveStates() {
     const slides = document.querySelectorAll(".swiper-slide")
     slides.forEach((slide, index) => {
-      if (index === currentFestivalIndex) {
+      // 👉 더미 슬라이드 보정 (index === currentFestivalIndex + 1)
+      if (index === currentFestivalIndex + 1) {
         slide.classList.remove("inactive")
       } else {
         slide.classList.add("inactive")
