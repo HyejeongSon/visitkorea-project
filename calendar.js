@@ -65,15 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add month indicator if it's the first date or the first day of a month
         if (index === 0 || dateNum === 1) {
           dateItem.innerHTML = `
-            <div class="date-month">${date.getFullYear()}.${date.getMonth() + 1}</div>
-            <div class="date-day ${isSameDate(date, selectedDate) ? "selected" : ""}">${dateNum}</div>
-            <div class="date-weekday">${weekdayName}</div>
-          `
+              <div class="date-month">${date.getFullYear()}.${date.getMonth() + 1}</div>
+              <div class="date-day ${isSameDate(date, selectedDate) ? "selected" : ""}">${dateNum}</div>
+              <div class="date-weekday">${weekdayName}</div>
+            `
         } else {
           dateItem.innerHTML = `
-            <div class="date-day ${isSameDate(date, selectedDate) ? "selected" : ""}">${dateNum}</div>
-            <div class="date-weekday">${weekdayName}</div>
-          `
+              <div class="date-day ${isSameDate(date, selectedDate) ? "selected" : ""}">${dateNum}</div>
+              <div class="date-weekday">${weekdayName}</div>
+            `
         }
   
         dateItem.addEventListener("click", () => {
