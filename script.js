@@ -10,16 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let visibleDates = []
   let selectedDate = new Date()
-  let currentStartDate = new Date()
-  let currentPage = 0
-  let totalPages = 0
+  const currentStartDate = new Date()
+  let currentFestivalIndex = 0
   let filteredFestivals = []
+  let slideWidth = 0
+  const slideGap = 30
 
   updateVisibleDates(0)
   renderDates()
   updateMonthDisplay()
   filterAndRenderFestivals()
   updatePagination()
+
+  window.addEventListener("resize", calculateSlideWidth)
 
   datePrevBtn.addEventListener("click", () => {
     updateVisibleDates(-14)
@@ -34,17 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   festivalPrevBtn.addEventListener("click", () => {
-    if (currentPage > 0) {
-      currentPage--
-      renderFestivalPage()
+    if (currentFestivalIndex > 0) {
+      currentFestivalIndex--
+      updateSliderPosition()
+      updateActiveStates()
       updatePagination()
     }
   })
 
   festivalNextBtn.addEventListener("click", () => {
-    if (currentPage < totalPages - 1) {
-      currentPage++
-      renderFestivalPage()
+    if (currentFestivalIndex < filteredFestivals.length - 1) {
+      currentFestivalIndex++
+      updateSliderPosition()
+      updateActiveStates()
       updatePagination()
     }
   })
@@ -52,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateVisibleDates(offset = 0) {
     currentStartDate.setDate(currentStartDate.getDate() + offset)
     visibleDates = []
-
     for (let i = 0; i < 14; i++) {
       const date = new Date(currentStartDate)
       date.setDate(currentStartDate.getDate() + i)
@@ -62,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderDates() {
     dateSlider.innerHTML = ""
-
     visibleDates.forEach((date) => {
       const dateItem = document.createElement("div")
       dateItem.className = "date-item"
@@ -104,13 +107,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return selectedDate >= startDate && selectedDate <= endDate
     })
 
-    totalPages = Math.max(1, Math.ceil(filteredFestivals.length / 3))
-    currentPage = 0
-
-    renderFestivalPage()
+    currentFestivalIndex = 0
+    renderFestivalSlider()
+    calculateSlideWidth()
+    updateSliderPosition()
   }
 
-  function renderFestivalPage() {
+  function renderFestivalSlider() {
     festivalSlider.innerHTML = ""
 
     if (filteredFestivals.length === 0) {
@@ -121,46 +124,89 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
-    const startIdx = currentPage * 3
-    const endIdx = Math.min(startIdx + 3, filteredFestivals.length)
-    const pageFestivals = filteredFestivals.slice(startIdx, endIdx)
+    filteredFestivals.forEach((festival, index) => {
+      const slide = document.createElement("div")
+      slide.className = "swiper-slide"
+      slide.setAttribute("data-index", index)
 
-    pageFestivals.forEach((festival) => {
-      const card = document.createElement("div")
-      card.className = "festival-card"
       const imageUrl = festival.image || "/placeholder.svg?height=200&width=300"
 
-      card.innerHTML = `
-        <div class="festival-image" style="background-image: url('${imageUrl}')"></div>
-        <div class="festival-content">
-          <h3 class="festival-title">${festival.title}</h3>
-          <div class="festival-location">${festival.district}</div>
-          <div class="festival-info">
-            <div class="festival-period">기간<br>${formatDateRange(festival.startDate, festival.endDate)}</div>
-            <div class="festival-address">장소<br>${shortenLocation(festival.location)}</div>
-          </div>
-          <div class="festival-buttons">
-            <a href="${festival.homepage}" target="_blank" class="festival-button">바로가기</a>
-            <a href="https://map.naver.com/v5/search/${encodeURIComponent(festival.location)}" 
-                target="_blank" class="festival-button">길찾기</a>
+      slide.innerHTML = `
+        <div class="inr">
+          <span class="img">
+            <img src="${imageUrl}" alt="${festival.title}">
+          </span>
+          <div class="info">
+            <h3>${festival.title}</h3>
+            <em>${festival.district}</em>
+            <div class="period_place">
+              <div class="period">
+                <strong>기간</strong>
+                <span>${formatDateRange(festival.startDate, festival.endDate)}</span>
+              </div>
+              <div class="place">
+                <strong>장소</strong>
+                <span>${shortenLocation(festival.location)}</span>
+              </div>
+            </div>
+            <div class="btn">
+              <a href="${festival.homepage}" target="_blank">바로가기</a>
+              <a href="https://map.naver.com/v5/search/${encodeURIComponent(festival.location)}" target="_blank">길찾기</a>
+            </div>
           </div>
         </div>
       `
-      festivalSlider.appendChild(card)
+
+      festivalSlider.appendChild(slide)
+    })
+
+    updateActiveStates()
+  }
+
+  function calculateSlideWidth() {
+    if (filteredFestivals.length === 0) return
+    const slide = document.querySelector(".swiper-slide")
+    if (slide) {
+      slideWidth = slide.offsetWidth + slideGap
+    }
+  }
+
+  function updateSliderPosition() {
+    if (filteredFestivals.length === 0) return
+
+    const containerWidth = festivalSlider.parentElement.offsetWidth
+    const slideCenter = slideWidth / 2
+    const containerCenter = containerWidth / 2
+
+    let offset = currentFestivalIndex * slideWidth - containerCenter + slideCenter
+    offset = Math.max(0, offset)
+
+    festivalSlider.style.transform = `translateX(-${offset}px)`
+    updateActiveStates()
+  }
+
+  function updateActiveStates() {
+    const slides = document.querySelectorAll(".swiper-slide")
+    slides.forEach((slide, index) => {
+      if (index === currentFestivalIndex) {
+        slide.classList.remove("inactive")
+      } else {
+        slide.classList.add("inactive")
+      }
     })
   }
 
   function updatePagination() {
     paginationDots.innerHTML = ""
-
-    for (let i = 0; i < totalPages; i++) {
+    for (let i = 0; i < filteredFestivals.length; i++) {
       const dot = document.createElement("div")
       dot.className = "pagination-dot"
-      if (i === currentPage) dot.classList.add("active")
+      if (i === currentFestivalIndex) dot.classList.add("active")
 
       dot.addEventListener("click", () => {
-        currentPage = i
-        renderFestivalPage()
+        currentFestivalIndex = i
+        updateSliderPosition()
+        updateActiveStates()
         updatePagination()
       })
 
@@ -171,11 +217,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function formatDateRange(startStr, endStr) {
     const start = new Date(startStr)
     const end = new Date(endStr)
-    return `${start.getMonth() + 1}.${start.getDate()}. ~ ${end.getMonth() + 1}.${end.getDate()}.`
+    return `${start.getFullYear()}. ${start.getMonth() + 1}. ${start.getDate()}. ~<br/> ${end.getFullYear()}. ${end.getMonth() + 1}. ${end.getDate()}.`
   }
 
   function shortenLocation(location) {
-    return location.length > 20 ? location.substring(0, 20) + "..." : location
+    return location.length > 25 ? location.substring(0, 25) + "..." : location
   }
 
   function getWeekdayName(day) {
@@ -183,10 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function isSameDate(d1, d2) {
-    return (
-      d1.getFullYear() === d2.getFullYear() &&
-      d1.getMonth() === d2.getMonth() &&
-      d1.getDate() === d2.getDate()
-    )
+    return d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate()
   }
 })
