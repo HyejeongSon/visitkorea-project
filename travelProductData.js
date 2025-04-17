@@ -6,7 +6,7 @@ const travelProductData = [
     "minPrice": 136327,
     "startDate": "2024-06-26",
     "endDate": "2026-12-25",
-    "tags": ["투어패스","바다여행",  "투어패스"],
+    "tags": ["투어패스","바다여행"],
     "img": "https://www.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=20068&fileTy=MEDIA&fileNo=1"
   },
   {
@@ -26,7 +26,7 @@ const travelProductData = [
     "minPrice": 153332,
     "startDate": "2024-03-16",
     "endDate": "2025-11-06",
-    "tags": ["SRT여행",  "투어패스",  "가자타고_편하게"],
+    "tags": ["SRT여행",  "투어패스", "가자타고_편하게"],
     "img": "https://www.inews365.com/data/photos/20230208/art_16771273952378.jpg"
   },
   {
