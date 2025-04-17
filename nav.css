@@ -145,13 +145,6 @@
     padding: 0 15px;
 }
 
-.dropdown-column h3 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #333;
-}
-
 .dropdown-column ul {
     display: flex;
     flex-direction: column;
@@ -191,23 +184,8 @@
 }
 
 /* 반응형 스타일 */
-@media (max-width: 992px) {
-    .dropdown-content {
-        flex-wrap: wrap;
-    }
-    
-    .dropdown-column {
-        flex: 0 0 50%;
-        margin-bottom: 20px;
-    }
-}
-
 @media (max-width: 768px) {
     .menu-area {
         display: none;
-    }
-    
-    .dropdown-column {
-        flex: 0 0 100%;
     }
 }

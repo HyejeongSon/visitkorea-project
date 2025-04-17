@@ -1,28 +1,12 @@
+/* 푸터 스타일 */
+.footer {
+    overflow: hidden;
+}
+
 .footer-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul, li {
-    list-style: none;
-}
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-/* 푸터 스타일 */
-.footer {
-    overflow: hidden;
 }
 
 /* 탭 네비게이션 */
@@ -75,7 +59,7 @@ button {
     min-width: 250px;
 }
 
-.dropdown {
+.footer-dropdown {
     flex: 1;
     position: relative;
     border: 1px solid #ddd;
@@ -292,8 +276,8 @@ button {
 
 .icon-list {
     display: flex;
-    justify-content: center; /* 아이콘들을 가운데 정렬 */
-    gap: 20px; /* 아이콘 간 간격 */
+    justify-content: center;
+    gap: 20px;
 }
 
 .content-container {
@@ -301,24 +285,24 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 60px; /* 각 아이콘-텍스트 박스의 너비 */
+    width: 60px;
 }
 
 .image-container {
     width: 40px;
     height: 40px;
-    margin-bottom: 5px; /* 이미지와 텍스트 간의 간격 */
+    margin-bottom: 5px;
 }
 
 .image {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* 원형 효과 */
+    border-radius: 50%;
     transition: all 0.3s ease;
 }
 
 .text-container {
     font-size: 12px;
     color: gray;
-    line-height: 1.4; /* 텍스트 줄 간격 */
+    line-height: 1.4;
 }

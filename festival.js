@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span>${shortenLocation(festival.location)}</span>
               </div>
             </div>
-            <div class="btn">
+            <div class="festival-btn">
               <a href="${festival.homepage}" target="_blank">바로가기</a>
               <a href="https://map.naver.com/v5/search/${encodeURIComponent(festival.location)}" target="_blank">길찾기</a>
             </div>

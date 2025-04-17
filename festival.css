@@ -1,17 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: "Noto Sans KR", sans-serif;
-  line-height: 1.5;
-  color: #333;
-  background-color: #fff;
-}
-
-.container {
+.main-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
