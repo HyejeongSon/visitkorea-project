@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>전국 축제·행사 어디까지 가봤니?</title>
+  <link rel="stylesheet" href="festival.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="main-header">
+      <h1 class="main-title">전국 축제·행사 어디까지 가봤니?</h1>
+    </header>
+
+    <!-- Calendar Section-->
+    <div class="calendar-section">
+      
+      <div class="date-navigation">
+        <button class="nav-arrow prev" id="date-prev">
+          <span class="arrow-icon">&#10094;</span>
+        </button>
+        <div class="date-slider" id="date-slider"></div>
+        <button class="nav-arrow next" id="date-next">
+          <span class="arrow-icon">&#10095;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Festival Section-->
+  <div class="festival-wrapper">
+    <div class="festival-container">
+      <div class="festival-slider" id="festival-slider"></div>
+      
+      <div class="pagination">
+        <button class="pagination-arrow prev" id="festival-prev">
+          <span class="arrow-icon">&#10094;</span>
+        </button>
+        
+        <div class="pagination-dots" id="pagination-dots"></div>
+        
+        <button class="pagination-arrow next" id="festival-next">
+          <span class="arrow-icon">&#10095;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+<script src="festivalData.js"></script>
+<script src="festival.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>
