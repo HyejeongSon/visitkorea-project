@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전국 여행 홍보관</title>
+  <link rel="stylesheet" href="travel.css" />
+  <link rel="stylesheet" href="travelProductList.css" />
+</head>
+<body>
+  <div class="background-container">
+    <div class="background-shape-left"></div>
+    <div class="background-shape-right"></div>
+  </div>
+
+  <div class="container">
+    <div class="top-sections">
+      <div class="left-section">
+        <div class="title-section">
+          <div class="subtitle">대한민국 구석구석으로 떠나세요!</div>
+          <h1 class="main-title">여행상품 홍보관</h1>
+        </div>
+
+        <div class="search-section">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="원하시는 여행 상품을 찾아보세요.">
+            <img src="icons/search.png" alt="검색" class="search-icon" />
+          </div>
+
+          <div class="location-title"># 어디로, 언제 떠나시나요?</div>
+          <div class="location-box">
+            <img src="icons/place.png" alt="위치" class="location-icon" />
+            <input type="text" class="location-input" placeholder="어디로 여행가세요?">
+          </div>
+
+          <div class="date-box">
+            <img src="icons/calendar.png" alt="달력" class="date-icon" />
+            <input type="text" class="date-input" placeholder="여행 일정도 추가 할래요!">
+          </div>
+        </div>
+
+        <div class="tag-section">
+          <div class="tag-title"># 이런 여행 테마는 어때요?</div>
+          <div class="tags"></div>
+        </div>
+
+        <div class="pagination">
+          <div class="pagination-arrow">◀</div>
+          <div class="pagination-text">1 / 2</div>
+          <div class="pagination-arrow">▶</div>
+        </div>
+
+        <div class="button-section">
+          <button class="search-button">
+            <img src="icons/search-white.png" alt="검색" class="button-icon" />검색하기
+          </button>
+          <button class="filter-button">
+            <img src="icons/random.png" alt="검색" class="button-icon" /> 랜덤추천
+          </button>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div class="slider-container">
+          <div class="slider" id="slider"></div>
+          <div class="slider-dots" id="slider-dots"></div>
+          <div class="slider-controls">
+            <button class="slider-button" id="prev-button">◀</button>
+            <button class="slider-button" id="next-button">▶</button>
+            <button class="slider-button" id="pause-button">❚❚</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-list-container" id="product-list" style="display: none;"></div>
+  </div>
+
+  <script src="travelData.js"></script>
+  <script src="travelTagData.js"></script>
+  <script src="travelProductData.js"></script>
+  <script src="travel.js"></script>
+  <script src="travelProductList.js"></script>
+</body>
+</html>

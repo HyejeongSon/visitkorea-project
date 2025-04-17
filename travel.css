@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.background-shape-left,
+.background-shape-right {
+  position: absolute;
+  top: 120px;
+  height: 750px;
+  z-index: -10;
+}
+
+.background-shape-left {
+  left: 0;
+  background-color: #fffbf8;
+  width: 55%;
+}
+
+.background-shape-right {
+  right: 0;
+  background-color: #f3efea;
+  width: 45%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+}
+
+/* left/right 묶는 영역 */
+.top-sections {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.left-section {
+  flex: 1;
+  padding: 40px 40px;
+  max-width: 500px;
+}
+
+.title-section {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 20px;
+}
+
+.main-title {
+  font-size: 54px;
+  color: #333;
+  font-weight: 300;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+}
+
+.search-icon,
+.location-icon,
+.date-icon,
+.button-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+}
+
+.search-section {
+  margin-bottom: 30px;
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 16px 30px 16px 25px;
+  border: 1px solid #bbb5b5;
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.search-icon {
+  right: 20px;
+}
+
+.location-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.location-input {
+  width: 100%;
+  padding: 16px 30px 16px 42px;
+  border: 2px solid #bbb5b5;
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.location-icon {
+  left: 15px;
+}
+
+.date-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.date-input {
+  width: 100%;
+  padding: 16px 30px 16px 42px;
+  border: 2px solid #bbb5b5;
+  border-radius: 30px;
+  font-size: 18px;
+  outline: none;
+}
+
+.date-icon {
+  left: 15px;
+}
+
+.tag-section {
+  margin-bottom: 30px;
+}
+
+.location-title,
+.tag-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  margin: 15px;
+  font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  min-height: 170px;
+  align-content: flex-start;
+}
+
+.tag {
+  padding: 8px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination-text {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.pagination-arrow {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+}
+
+.button-section {
+  display: flex;
+  gap: 10px;
+  margin: 30px auto 0;
+  max-width: 300px;
+}
+
+.search-button {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.filter-button {
+  flex: 1;
+  padding: 10px;
+  background-color: #bbbbbb;
+  color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.button-icon {
+  margin-right: 5px;
+  margin-top: 17px;
+  width: 18px;
+  height: 18px;
+  position: static;
+}
+
+.right-section {
+  flex: 1.2;
+  position: relative;
+  max-height: 700px;
+  max-width: 650px;
+  margin: 40px 20px;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0px 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 50px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.slide-title {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.slide-button {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slide-button:hover {
+  background-color: white;
+  color: #333;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.slider-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider-dots {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.slider-dot {
+  width: 30px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dot.active {
+  background-color: white;
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .top-sections {
+    flex-direction: column;
+  }
+
+  .right-section {
+    margin-top: 30px;
+    height: 400px;
+  }
+}
