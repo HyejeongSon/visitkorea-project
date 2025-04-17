@@ -20,3 +20,34 @@
 | `refactor` | 리팩토링 |
 | `test` | 테스트 코드 추가/수정 |
 | `chore` | 빌드/패키지/환경 설정 등 잡일 |
+
+### Directory Structure
+
+```
+├── data
+│   ├── festivalData.js
+│   ├── travelData.js
+│   ├── travelProductData.js
+│   └── travelTagData.js
+├── icons
+├── images
+├── scripts
+│   ├── calendar.js
+│   ├── festival.js
+│   ├── footer.js
+│   ├── script.js
+│   ├── travel.js
+│   └── travelProductList.js
+├── styles
+│   ├── festival.css
+│   ├── footer.css
+│   ├── location-month-modal.css
+│   ├── nav.css
+│   ├── slider.css
+│   ├── styles.css
+│   ├── travel.css
+│   └── travelProductList.css
+├── footer.html
+├── index.html
+└── travel.html
+```
