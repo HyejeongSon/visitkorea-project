@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     // 슬라이더 요소
     const slider = document.getElementById('mainSlider');
@@ -26,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let slideInterval;
     let progressInterval;
     const slideDelay = 5000; // 5초마다 슬라이드 변경
-    let progress = 0
-    navbar.classList.add("top")
+    let progress = 0;
+    navbar.classList.add("top");
+    
     // 총 슬라이드 수 표시
     totalSlidesEl.textContent = String(totalSlides).padStart(2, '0');
     
@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // 새 테마 클래스 추가
         navbar.classList.add(`theme-${currentTheme}`);
     }
-    
     
     // 프로그레스 바 업데이트
     function updateProgress() {
@@ -136,27 +135,25 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
             navbar.classList.remove('top');
-
         } else {
             navbar.classList.add('top');
-    
             navbar.classList.remove('scrolled');
-
             updateNavbarTheme(); // 상단으로 돌아갔을 때 테마 색상 복원
         }
     });
-    header.addEventListener('mouseover',function(){
-        console.log("하이")
+    
+    header.addEventListener('mouseover', function() {
+        console.log("하이");
         navbar.classList.add('scrolled');
-        
-    })
-    header.addEventListener('mouseout',function(){
-        console.log("바이")
-        if(navbar.classList.contains("top")){
-            navbar.classList.remove('scrolled')
+    });
+    
+    header.addEventListener('mouseout', function() {
+        console.log("바이");
+        if (navbar.classList.contains("top")) {
+            navbar.classList.remove('scrolled');
             updateNavbarTheme();
         }
-    })
+    });
         
     // 이벤트 리스너
     prevBtn.addEventListener('click', () => {
@@ -227,26 +224,5 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (isPlaying) {
             startAutoSlide();
         }
-    });
-
-    const icons = [
-        { id: 'icon1', graySrc: './icons/blog_gray.png', colorSrc: './icons/blog_color.png' },
-        { id: 'icon2', graySrc: './icons/post_gray.png', colorSrc: './icons/post_color.png' },
-        { id: 'icon3', graySrc: './icons/facebook_gray.png', colorSrc: './icons/facebook_color.png' },
-        { id: 'icon4', graySrc: './icons/x_gray.png', colorSrc: './icons/x_color.png' },
-        { id: 'icon5', graySrc: './icons/kakaostory_gray.png', colorSrc: './icons/kakaostory_color.png' },
-        { id: 'icon6', graySrc: './icons/insta_gray.png', colorSrc: './icons/insta_color.png' },
-        { id: 'icon7', graySrc: './icons/band_gray.png', colorSrc: './icons/band_color.png' },
-
-    ];
-
-    icons.forEach(icon => {
-        const element = document.getElementById(icon.id);
-        element.addEventListener('mouseover', () => {
-            element.src = icon.colorSrc; // 컬러 아이콘으로 변경
-        });
-        element.addEventListener('mouseout', () => {
-            element.src = icon.graySrc; // 회색 아이콘으로 복원
-        });
     });
 });
