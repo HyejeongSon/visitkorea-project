@@ -392,6 +392,12 @@ body {
   background-color: white;
 }
 
+.search-icon:hover,
+.location-icon:hover,
+.date-icon:hover {
+  cursor: pointer;
+}
+
 /* 반응형 */
 @media (max-width: 992px) {
   .container {
