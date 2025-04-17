@@ -109,7 +109,24 @@
     height: 2px;
     background-color: currentColor;
 }
-
+.dropdown-list{
+    visibility: hidden;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: fixed;
+    z-index: 1002;
+    font-size: 14px;
+}
+.dropdown-list span{
+    margin-top: 1px;
+}
+#header:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 /* 전체 드롭다운 메뉴 스타일 */
 .mega-dropdown {
     position: absolute;
@@ -133,22 +150,27 @@
 }
 
 .dropdown-content {
+    height: 200px;
     max-width: 1200px;
     margin: 0 auto;
-    margin-right: 440px;
     padding: 30px 20px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 50px; /* 각 열 사이 간격 추가 */
 }
 
 .dropdown-column {
     padding: 0 15px;
+    display: flex;
+    flex-direction: column; /* 세로로 쌓이도록 설정 */
+    align-items: flex-start; /* 왼쪽 정렬 */
 }
 
 .dropdown-column ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 10px; /* 헤더와 리스트 사이 간격 */
 }
 
 .dropdown-column a {
