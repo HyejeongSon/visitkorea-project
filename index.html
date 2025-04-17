@@ -3,33 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>네비게이션 바</title>
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="footer.css">
-    
+    <title>대한민국 구석구석</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap">
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <div style="border: 1px solid black; border-radius: 50%; padding: 5px;">구</div>
-            <span>석구석</span>
+    <!-- 네비게이션 바 -->
+    <header id="header">
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="logo-area">
+                    <a href="#" class="logo">
+                        <svg id="pathicon1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="86px" viewBox="0 0 510 86" style="enable-background:new 0 0 510 86;" xml:space="preserve"><path class="text-path" d="M483.7,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C484.8,50,484.3,49.5,483.7,49.5z M453,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c0,0-18.7,0-18.7,0c4.8-2,10.7-6.4,10.7-15.6v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.6-7.7,15.6h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h22.3C445,46.6,449.7,45,453,41.3z M483.1,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C484.8,19.9,484.1,19.1,483.1,19.1z M467.1,0H351.6c-23.1,0-42,18.3-43,41.2H272C271,18.3,252.1,0,229,0c-23.7,0-43,19.3-43,43c0,23.7,19.3,43,43,43c23.1,0,42-18.3,43-41.2h36.6c1,22.9,19.9,41.2,43,41.2h115.5c23.7,0,43-19.3,43-43C510.1,19.3,490.8,0,467.1,0z M229,82.3c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3c21.7,0,39.3,17.6,39.3,39.3C268.3,64.7,250.7,82.3,229,82.3z M467.1,82.3H351.6c-21.7,0-39.3-17.6-39.3-39.3c0-21.7,17.6-39.3,39.3-39.3h115.5c21.7,0,39.3,17.6,39.3,39.3C506.4,64.7,488.7,82.3,467.1,82.3z M347.5,41.3c3.3,3.8,8,5.4,13.7,5.4h1.8c0.9,0,1.7-0.7,1.7-1.7c0-0.9-0.7-1.7-1.7-1.7h0c-4.6,0-9.4-2.4-9.4-7.7V20.8c0-0.9-0.8-1.7-1.7-1.7h-8.7c-0.9,0-1.7,0.8-1.7,1.7v14.7c0,5.4-4.8,7.7-9.4,7.7h0c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h1.8C339.4,46.6,344.1,45,347.5,41.3z M377.6,19.1h-8.7c-0.9,0-1.7,0.8-1.7,1.7v8.1h-4c-0.9,0-1.7,0.7-1.7,1.7s0.7,1.7,1.7,1.7h4v12.7c0,0.9,0.8,1.7,1.7,1.7h8.7c0.9,0,1.7-0.8,1.7-1.7V20.8C379.3,19.9,378.5,19.1,377.6,19.1z M254.8,43.3h-18c4.8-2,10.7-6.4,10.7-15.7v-6.8c0-0.9-0.8-1.7-1.7-1.7h-33.7c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h23.3v5.2c0,15.3-7.7,15.7-7.7,15.7h-24.5c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h19.7v23.2c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V46.6h19.7c0.9,0,1.7-0.7,1.7-1.7C256.4,44,255.7,43.3,254.8,43.3z M378.1,49.5h-39.2c-0.9,0-1.7,0.7-1.7,1.7c0,0.9,0.7,1.7,1.7,1.7h28.3v17c0,0.9,0.8,1.7,1.7,1.7c5.8,0,10.4-4.7,10.4-10.4V50.6C379.3,50,378.8,49.5,378.1,49.5z" stroke="undefined" stroke-width="1">
+                
+                        </path><path class="text-path" d="M66.2,35.2c0-3.3-1.4-6.2-4.2-8h4.1c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5h-7.4v-4c0-0.6-0.5-1.1-1.1-1.1H53c-0.6,0-1.1,0.5-1.1,1.1v4h-7.4c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h4.2c-2.7,1.8-4.2,4.7-4.2,8c0,5.4,3.9,9.8,10.9,9.8C62.4,45.1,66.2,40.7,66.2,35.2z M51.2,35.2c0-3.8,1.5-6.8,4.2-6.8c2.7,0,4.2,3.1,4.2,6.8c0,3.8-1.5,6.8-4.2,6.8C52.7,42.1,51.2,39,51.2,35.2z M35.4,19.6H31c-0.6,0-1.1,0.5-1.1,1.1v10.4h-4.2V21.1c0-0.6-0.5-1.1-1.1-1.1h-4.4c-0.6,0-1.1,0.5-1.1,1.1v21.8c-0.6,0.2-1.3,0.5-2.1,0.6c-0.9,0.2-1.9,0.3-3.1,0.3h-7V24.3H14c0.8,0,1.5-0.7,1.5-1.5c0-0.8-0.7-1.5-1.5-1.5H1c-0.6,0-1.1,0.5-1.1,1.1v23.4c0,0.6,0.5,1.1,1.1,1.1h12.6c1.3,0,2.4-0.1,3.3-0.4c0.9-0.3,1.6-0.6,2.2-1.1v15c0,0.6,0.5,1.1,1.1,1.1H22c2.1,0,3.7-1.6,3.7-3.7V35.1h4.2v25.9c0,0.6,0.5,1.1,1.1,1.1h1.8c2.1,0,3.7-1.6,3.7-3.7V20.7C36.5,20.1,36,19.6,35.4,19.6z M78.5,59H57.8v-9.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v11.5c0,0.6,0.5,1.1,1.1,1.1h26.6c0.8,0,1.5-0.7,1.5-1.5C80,59.7,79.3,59,78.5,59z M119,51h1.4c2.5,0,4.5-2,4.5-4.4V20.7c0-0.6-0.5-1.1-1.1-1.1H119c-0.6,0-1.1,0.5-1.1,1.1v29.1C117.9,50.5,118.4,51,119,51z M168.8,36h-5.3c0.5-0.6,0.9-1.6,1.2-3c0.3-1.4,0.5-2.6,0.5-3.8v-6.9c0-0.6-0.5-1.1-1.1-1.1h-27.3c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h21.4v5.2c0,1.2-0.1,2.4-0.2,3.5c-0.1,1.2-0.3,2.2-0.7,3.1H132c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h14.7v7.7h-10.1c-0.8,0-1.5,0.7-1.5,1.5c0,0.8,0.7,1.5,1.5,1.5h21.5v11.3c0,0.6,0.5,1.1,1.1,1.1h1.4c2.5,0,4.5-2,4.5-4.4v-9.9c0-0.6-0.5-1.1-1.1-1.1h-10.3v-7.7h15c0.8,0,1.5-0.7,1.5-1.5C170.3,36.6,169.6,36,168.8,36z M84,30.3h-5.5v-9.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v29.1c0,0.6,0.5,1.1,1.1,1.1H74c2.5,0,4.5-2,4.5-4.4V33.3H84c0.8,0,1.5-0.7,1.5-1.5C85.5,31,84.8,30.3,84,30.3z M124.8,59h-21.7V48.6c0-0.6-0.5-1.1-1.1-1.1h-4.8c-0.6,0-1.1,0.5-1.1,1.1v12.3c0,0.6,0.5,1.1,1.1,1.1h27.6c0.8,0,1.5-0.7,1.5-1.5C126.3,59.7,125.6,59,124.8,59z M111.8,38.5V22.3c0-0.6-0.5-1.1-1.1-1.1H90.9c-0.6,0-1.1,0.5-1.1,1.1v19.6c0,0.6,0.5,1.1,1.1,1.1h16.4C109.8,42.9,111.8,41,111.8,38.5z M104.8,40h-8V24.2h8V40z" stroke="undefined" stroke-width="1"></path></svg>
+                    </a>
+                </div>
+                
+                <div class="menu-area">
+                    <ul class="main-menu">
+                        <li><a href="#" class="active">홈</a></li>
+                        <li><a href="#">테마</a></li>
+                        <li><a href="#">지역</a></li>
+                        <li><a href="#">여행코스</a></li>
+                        <li><a href="#">여행정보</a></li>
+                        <li><a href="#">여행혜택</a></li>
+                    </ul>
+                </div>
+                
+                <div class="util-area">
+                    <button class="icon-btn search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                    <button class="icon-btn my-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button class="icon-btn lang-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- 전체 드롭다운 메뉴 -->
+        <div class="mega-dropdown">
+            <div class="dropdown-content">
+                <div class="dropdown-column">
+                    <ul>
+                        <li><a href="#">추천코스</a></li>
+                        <li><a href="#">AI콕콕 플래너</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown-column">
+                    <ul>
+                        <li><a href="#">여행지</a></li>
+                        <li><a href="#">여행기사</a></li>
+                        <li><a href="#">축제</a></li>
+                        <li><a href="#">공연/행사</a></li>
+                        <li><a href="#">AI콕콕</a></li>
+                        <li><a href="#">여행상품</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown-column">
+                    <ul>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">가볼래-터</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <ul class="menu">
-            <li><a href="#home">홈</a></li>
-            <li><a href="#theme">테마</a></li>
-            <li><a href="#region">지역</a></li>
-            <li><a href="#course">여행코스</a></li>
-            <li><a href="#info">여행정보</a></li>
-            <li><a href="#benefits">여행혜택</a></li>
-        </ul>
-        <div class="icons">
-            <i>🔍</i> <!-- 검색 아이콘 -->
-            <i>🗺️</i> <!-- 지도 아이콘 -->
-            <i>👤</i> <!-- 사용자 아이콘 -->
-            <i>🌐</i> <!-- 언어 아이콘 -->
+    </header>
+
+    <!-- 슬라이더 영역 -->
+    <div class="slider-container">
+        <div class="slider" id="mainSlider">
+            <!-- 슬라이드 1 - 양조장 투어 -->
+            <div class="slide" data-theme="lightblue">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <div class="slide-tag">오래도록 담금한 여운</div>
+                        <h2>지금마시러 갑니다,</h2>
+                        <h3>전국양조장 투어4</h3>
+                        <a href="#" class="btn-more">자세히 보기</a>
+                    </div>
+                    <img class="main_showcase_logo" src="./images/main_showcase_logo.png">
+
+                    <div class="slide-image">
+                        <img src="./images/back1.png" alt="전국양조장 투어">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 슬라이드 2 - 가을 여행 -->
+            <div class="slide" data-theme="orange">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <div class="slide-tag">가을 여행 특집</div>
+                        <h2>단풍으로 물든</h2>
+                        <h3>가을 여행 명소</h3>
+                        <a href="#" class="btn-more">자세히 보기</a>
+                    </div>
+                    <img class="main_showcase_logo" src="./images/main_showcase_logo.png">
+
+                    <div class="slide-image">
+                        <img src="./images/back2.png" alt="가을 여행 명소">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 슬라이드 3 - 섬 여행 -->
+            <div class="slide" data-theme="blue">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <div class="slide-tag">섬 여행 추천</div>
+                        <h2>푸른 바다가 반기는</h2>
+                        <h3>아름다운 섬 여행</h3>
+                        <a href="#" class="btn-more">자세히 보기</a>
+                    </div>
+                    <img class="main_showcase_logo" src="./images/main_showcase_logo.png">
+
+                    <div class="slide-image">
+                        <img src="./images/back3.png" alt="섬 여행 추천">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 슬라이드 4 - 도시 여행 -->
+            <div class="slide" data-theme="purple">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <div class="slide-tag">도시 여행 가이드</div>
+                        <h2>활기찬 도시의 매력</h2>
+                        <h3>도시 여행 코스</h3>
+                        <a href="#" class="btn-more">자세히 보기</a>
+                    </div>
+                    <img class="main_showcase_logo" src="./images/main_showcase_logo.png">
+                    <div class="slide-image">
+
+                        <img src="./images/back4.png" alt="도시 여행 코스">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 슬라이드 5 - 맛집 탐방 -->
+            <div class="slide" data-theme="green">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <div class="slide-tag">전국 맛집 탐방</div>
+                        <h2>미식가들의 천국</h2>
+                        <h3>지역별 맛집 지도</h3>
+                        <a href="#" class="btn-more">자세히 보기</a>
+                    </div>
+                    <img class="main_showcase_logo" src="./images/main_showcase_logo.png">
+
+                    <div class="slide-image">
+                        <img src="./images/back5.png" alt="지역별 맛집 지도">
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <div class="container">
+        
+        <!-- 슬라이더 컨트롤 -->
+        <div class="slider-controls">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="slider-pagination">
+                <span id="currentSlide">01</span> / <span id="totalSlides">05</span>
+            </div>
+            <div class="slider-buttons">
+                <button id="prevBtn" class="slider-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <button id="playPauseBtn" class="slider-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pause-icon">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-icon" style="display: none;">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </button>
+                <button id="nextBtn" class="slider-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
         <!-- 푸터 영역 시작 -->
         <footer class="footer">    
             <!-- SNS 섹션 -->
@@ -44,64 +221,56 @@
                 </div>
                 
                 <div class="sns-links">
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon blog-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M3 3.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1.5 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/>
-                                <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5H.5ZM1 5V2h14v3H1Zm0 1h14v8H1V6Z"/>
-                            </svg>
+                    <div class="icon-list">
+                        <!-- 첫 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/blog_gray.png" alt="아이콘 1" class="image" id="icon1">
+                                <div class="text-container">블로그</div>
+                            </div>
                         </div>
-                        <span>블로그</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon post-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                            </svg>
+                        <!-- 두 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/post_gray.png" alt="아이콘 2" class="image" id="icon2">
+                                <div class="text-container">포스트</div>
+                            </div>
                         </div>
-                        <span>포스트</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon facebook-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-                            </svg>
+                        <!-- 세 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/facebook_gray.png" alt="아이콘 3" class="image" id="icon3">
+                                <div class="text-container">페이스북</div>
+                            </div>
                         </div>
-                        <span>페이스북</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon x-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                            </svg>
+                        <!-- 네 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/x_gray.png" alt="아이콘 4" class="image" id="icon4">
+                                <div class="text-container">엑스</div>
+                            </div>
                         </div>
-                        <span>엑스</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon kakao-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                            </svg>
+                        <!-- 다섯 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/kakaostory_gray.png" alt="아이콘 5" class="image" id="icon5">
+                                <div class="text-container">카카오스토리</div>
+                            </div>
                         </div>
-                        <span>카카오<br>스토리</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon instagram-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-                            </svg>
+                        <!-- 여섯 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/insta_gray.png" alt="아이콘 6" class="image" id="icon6">
+                                <div class="text-container">인스타그램</div>
+                            </div>
+                        </div><!-- 일곱 번째 아이콘 -->
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img src="./icons/band_gray.png" alt="아이콘 7" class="image" id="icon7">
+                                <div class="text-container">네이버밴드</div>
+                            </div>
                         </div>
-                        <span>인스타<br>그램</span>
-                    </a>
-                    <a href="#" class="sns-link">
-                        <div class="sns-icon naver-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-                            </svg>
-                        </div>
-                        <span>네이버<br>밴드</span>
-                    </a>
+                    </div>
                 </div>
             </div>
             
@@ -109,19 +278,19 @@
             <div class="banner-section">
                 <div class="banner-container">
                     <a href="#" class="banner">
-                        <img src="https://via.placeholder.com/250x90/e9d5ff/6b21a8?text=오디+(Odii)" alt="오디(Odii) 대한민국 관광지 오디오 해설">
+                        <img src="./images/od.png" alt="오디(Odii) 대한민국 관광지 오디오 해설">
                     </a>
                     <a href="#" class="banner">
-                        <img src="https://via.placeholder.com/250x90/f3e8ff/7e22ce?text=관광정보+수정/신규+요청" alt="관광정보 수정/신규 요청">
+                        <img src="./images/fot_link_banner3.gif" alt="관광정보 수정/신규 요청">
                     </a>
                     <a href="#" class="banner">
-                        <img src="https://via.placeholder.com/250x90/e0f2fe/0284c7?text=대한민국구석구석+WALLPAPER" alt="대한민국구석구석 WALLPAPER">
+                        <img src="./images/fot_link_banner6.gif" alt="대한민국구석구석 WALLPAPER">
                     </a>
                     <a href="#" class="banner">
-                        <img src="https://via.placeholder.com/250x90/dcfce7/16a34a?text=여행+가이드북" alt="여행 가이드북">
+                        <img src="./images/fot_link_banner4.gif" alt="여행 가이드북">
                     </a>
                     <a href="#" class="banner">
-                        <img src="https://via.placeholder.com/250x90/fef9c3/ca8a04?text=1330+관광안내" alt="1330 관광안내">
+                        <img src="./images/fot_link_banner7.gif" alt="1330 관광안내">
                     </a>
                 </div>
             </div>
@@ -129,7 +298,7 @@
             <!-- 링크 메뉴 -->
             <div class="link-menu">
                 <ul>
-                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#"><span style="color: blue;">개인정보처리방침</span></a></li>
                     <li><a href="#">이용약관</a></li>
                     <li><a href="#">위치기반서비스 이용약관</a></li>
                     <li><a href="#">저작권정책</a></li>
@@ -151,20 +320,21 @@
                 <div class="copyright">© 한국관광공사</div>
                 <div class="footer-logos">
                     <a href="#" class="footer-logo">
-                        <img src="https://via.placeholder.com/100x40/f8fafc/475569?text=TourAPI+4.0" alt="TourAPI 4.0">
+                        <img src="./images/tourApi.png" alt="TourAPI 4.0">
                     </a>
                     <a href="#" class="footer-logo">
-                        <img src="https://via.placeholder.com/100x40/f8fafc/475569?text=WA인증마크" alt="WA인증마크">
+                        <img src="./images/WA.png" alt="WA인증마크">
                     </a>
                     <a href="#" class="footer-logo">
-                        <img src="https://via.placeholder.com/100x40/f8fafc/475569?text=한국관광공사" alt="한국관광공사">
+                        <img src="./images/tourGong.png" alt="한국관광공사">
                     </a>
                     <a href="#" class="footer-logo">
-                        <img src="https://via.placeholder.com/100x40/f8fafc/475569?text=문화체육관광부" alt="문화체육관광부">
+                        <img src="./images/munhwa.png" alt="문화체육관광부">
                     </a>
                 </div>
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
