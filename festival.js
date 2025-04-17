@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const imageUrl = festival.image || "/placeholder.svg?height=200&width=300";
 
       slide.innerHTML = `
+        <img class="before" src="./images/circle.png"/>
         <div class="inr">
           <span class="img">
             <img src="${imageUrl}" alt="${festival.title}">
@@ -71,9 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="festival-btn">
               <a href="${festival.homepage}" target="_blank">바로가기</a>
               <a href="https://map.naver.com/v5/search/${encodeURIComponent(festival.location)}" target="_blank">길찾기</a>
+              <div style = flex:1></div>
             </div>
           </div>
         </div>
+          <img class="affter" src="./images/circle.png"/>
       `;
 
       festivalSlider.appendChild(slide);
