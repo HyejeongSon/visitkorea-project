@@ -36,17 +36,24 @@ button {
     padding: 0 20px;
 }
 
-/* 애니메이션 */
-.main_showcase_logo {
-    animation: rotate_image 10s linear infinite;
-    transform-origin: 50% 50%;
-    position: absolute;
-    margin-left: 28%;
-    margin-bottom: 30%;
+.slide-image-container {
+    position: relative;
 }
 
-@keyframes rotate_image{
+.main_showcase_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center center;
+    animation: rotate_image 10s linear infinite;
+    z-index: 10;
+}
+
+@keyframes rotate_image {
     100% {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
