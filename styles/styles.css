@@ -1,0 +1,59 @@
+/* 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* 공통 컨테이너 스타일 */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.slide-image-container {
+    position: relative;
+}
+
+.main_showcase_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center center;
+    animation: rotate_image 10s linear infinite;
+    z-index: 10;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
