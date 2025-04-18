@@ -2,7 +2,10 @@
 대한민국 구석구석 사이트([Visit Korea](https://korean.visitkorea.or.kr)) 클론 코딩 프로젝트
 
 ## 팀원
-김효준 손혜정
+| 이름 | 담당 업무 | GitHub |
+|:--:|:--|:--:|
+| **손혜정** | • AWS S3 정적 웹 사이트 배포<br>• 축제 캘린더 제작<br>• 여행정보 > 여행상품 페이지 제작 | [@HyejeongSon](https://github.com/HyejeongSon) |
+| **김효준** | • 네비게이션 제작<br>• 푸터 제작<br>• 메인 슬라이더 구현 | [@Hyo-joon](https://github.com/Hyo-joon) |
 
 ## AWS S3 정적 웹 호스팅
 
